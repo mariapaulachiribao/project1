@@ -1,0 +1,8 @@
+if(!file.exists("figures1"))dir.create("figures1")
+png(filename = "./figures1/plot3.png",width = 480,height=480,units="px")
+Sys.setlocale(category = "LC_ALL", locale = "english")
+with(data,plot(DateTime,Sub_metering_1,ylab="Energy sub metering",type="l"))
+with(data,lines(DateTime,Sub_metering_2,col="red"))
+with(data,lines(DateTime,Sub_metering_3,col="blue"))
+legend('topright', col = c('black', 'red', 'blue'), legend = c('Sub_metering_1', 'Sub_metering_2', 'Sub_metering_3'), lwd = 1)
+dev.off()
