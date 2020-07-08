@@ -1,0 +1,7 @@
+if(!file.exists("figures1"))dir.create("figures1")
+png(filename = "./figures1/plot2.png",width = 480,height = 480,units="px")
+data$Date=as.Date(data$Date,format="%d/%m/%Y")
+data$DateTime=as.POSIXct(paste(data$Date, data$Time))
+Sys.setlocale(category = "LC_ALL", locale = "english")
+with(data,plot(DateTime,Global_active_power,xlab="",ylab="Global Active Power (kilowatts)",type="l"))
+dev.off()
